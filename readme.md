@@ -1,0 +1,2 @@
+- Open this via vscode
+- ctrl+shift+b to build and run from .vscode script
