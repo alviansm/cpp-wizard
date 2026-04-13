@@ -1,26 +1,23 @@
-// Sorting algorithm
+// Missing number
 #include <bits/stdc++.h>
-using namespace std;
-
-#define fast_io ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
-#define ll long long
+using namespace std; 
 
 int main() {
-    fast_io;
-
-    unsigned int n;
-    vector<unsigned int> numbers;
-    numbers.reserve(n)
-
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int n;
     cin >> n;
-    if (!(cin>>n)) return 0;
-    for (i=0;i<n;i++){
-        unsigned int temp;
+
+    long long sum_exst = 0;
+    for (int i = 0; i < n - 1; i++) {
+        int temp;
         cin >> temp;
-        numbers.push_back(temp)
+        sum_exst += temp;
     }
 
-    
+    long long sum_all = (long long)n*(n+1)/2;
+    cout << sum_all-sum_exst << "\n";
 
     return 0;
 }
