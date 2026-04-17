@@ -4,7 +4,10 @@
         {
             "label": "Build and Run C++17",
             "type": "shell",
-            "command": "g++ -std=c++17 -O2 -Wall '${file}' -o '${fileDirname}/${fileBasenameNoExtension}.exe'; if ($?) { & '${fileDirname}/${fileBasenameNoExtension}.exe' }",
+            "command": "g++ -std=c++17 -O2 -Wall '${file}' -o '${fileDirname}/${fileBasenameNoExtension}' && '${fileDirname}/${fileBasenameNoExtension}'",
+            "windows": {
+                "command": "g++ -std=c++17 -O2 -Wall '${file}' -o '${fileDirname}\\${fileBasenameNoExtension}.exe'; if ($?) { & '${fileDirname}\\${fileBasenameNoExtension}.exe' }"
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true

@@ -8,6 +8,39 @@ class State {
 
     public:
         State(std::string lines) : lines(lines), size(lines.size()) {} 
+        void print() {std::cout << lines << "\n";}
+};
+
+class Command {
+public:
+    virtual ~Command() {std::cout << this << " destroyed\n";}
+    virtual void execute() = 0;
+    virtual void undo() = 0;
+};
+
+class TypeCommand : public Command{
+    std::vector<State> &history;
+    std::vector<State> &undoStack;
+    State newState;
+    bool hasExecuted = false;
+
+public:
+    TypeCommand(std::vector<State> &history,
+                std::vector<State> &undoStack,
+                std::string content) : history{history},
+                undoStack{undoStack}, newState(content) {
+                    std::cout << this << " consturcted.\n";
+                }
+
+    ~TypeCommand() {std::cout << this << " destroyed\n";}
+
+    void execute() override {
+
+    }
+
+    void undo() override {
+
+    }
 };
 
 int main() {
