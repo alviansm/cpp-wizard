@@ -127,6 +127,8 @@ int main() {
             s.print();
         }
         std::cout << "------------------------\n";
+        std::cout << "---" << commandHistory.size() << "---\n";
+        std::cout << "------------------------\n";
     }
 
     return 0;
