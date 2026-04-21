@@ -1,1 +1,12 @@
+# Ignore Windows binaries
 *.exe
+
+# Ignore Linux binaries (assuming they have no extension)
+# This ignores any file in the root that doesn't have a dot in the name
+/[^.]*
+# This ignores no-extension files in subfolders
+/*/[^.]*
+
+# Specifically ignore the output folder if you use one
+bin/
+build/
