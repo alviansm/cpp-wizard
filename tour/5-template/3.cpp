@@ -33,10 +33,33 @@ public:
         return elem[i];
     }
 
+    size_t size() {return sz;}
+
+    T* begin() {return elem;}
+    const T* begin() const {return elem;}
+
+    T* end() {return elem+sz;}
+    const T* end() const {return elem+sz;}
 
 };
 
+template <typename T>
+void printAll(const Vector<T> &x) {
+    for (auto &elem : x) 
+        std::cout << elem << " ";
+}
+
+template <typename T>
+void fillZero(Vector<T> &x) {
+    for (auto &elem : x)
+        elem = 0;
+}
+
 int main() {
+    Vector<double> db{100};
+    printAll(db);
+    fillZero(db);
+    printAll(db);
 
     return 0;
 }
