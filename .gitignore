@@ -1,12 +1,16 @@
-# Ignore Windows binaries
+# 1. Ignore everything first
+*
+
+# 2. Allow folders so Git can look inside them
+!*/
+
+# 3. Allow all files with an extension (like .cpp, .h, .md)
+!*.*
+
+# 4. NOW, specifically block the files with following formats/directories
 *.exe
-
-# Ignore Linux binaries (assuming they have no extension)
-# This ignores any file in the root that doesn't have a dot in the name
-/[^.]*
-# This ignores no-extension files in subfolders
-/*/[^.]*
-
-# Specifically ignore the output folder if you use one
-bin/
+*.dll
+*.pdb
 build/
+bin/
+obj/
