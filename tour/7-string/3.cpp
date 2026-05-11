@@ -1,4 +1,4 @@
-// Regular expression
+// Regular expression (regex_search)
 #include <iostream>
 #include <regex>
 #include <string>
