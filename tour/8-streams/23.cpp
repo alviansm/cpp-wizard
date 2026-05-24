@@ -1,0 +1,29 @@
+// String Stream
+#include <iostream>
+#include <sstream>
+#include <string>
+
+template<typename Target=std::string, typename Source=std::string>
+Target to(Source arg) {
+    std::stringstream interpreter;
+    Target result;
+
+    if (!(interpreter<<arg) || !(interpreter>>result) || !(interpreter>>std::ws).eof())
+        throw std::runtime_error{"to<> failed."};
+
+    return result;
+}
+
+int main() {
+    auto x1 = to<double,std::string>("3.141329");
+    auto x2 = to<std::string>(3.1);
+    auto x3 = to<>(3.14);
+    auto x4 = to(3.14);
+
+    std::ostringstream os;
+    os << "{" << x1 << ", " << x2 << ", " << x3 << ", " << x4 << "}";
+
+    std::cout << os.str() << std::endl;
+
+    return 0;
+}
